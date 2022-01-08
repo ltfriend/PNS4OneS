@@ -1,0 +1,37 @@
+﻿@page
+@model PNS4OneS.Pages.LoginModel
+@{
+    ViewData["Title"] = "Вход";
+}
+
+<script>
+    document.getElementById("changePwdButton").style.display = "none";
+</script>
+
+<div class="text-center">
+    <form class="form-signin" method="post">
+        <h1 class="h3 mb-3 fw-normal">Вход</h1>
+        @if (Model.PasswordIncorrect)
+        {
+            <p><font color="red">Указаны неверные учетные данные.</font></p>
+        }
+        @if (Model.NoName)
+        {
+            <font color="red">Не указано имя пользователя.</font><br />
+        }
+        @if (Model.NoPassword)
+        {
+            <font color="red">Не указан пароль.</font><br />
+        }
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Имя пользователя" autofocus />
+            <label for="floatingInput">Имя пользователя</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Пароль" />
+            <label for="floatingPassword">Пароль</label>
+        </div>
+        <button class="w-100 btn align-content-lg-around btn-primary" type="submit">Войти</button>
+    </form>
+</div>

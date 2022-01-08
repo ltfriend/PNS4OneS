@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Copyright>(с) Tolkachev Pavel, 2021-2022</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="conf\PNS4OneS.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="conf\PNS4OneS.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PNS4OneS.KeyStorage\PNS4OneS.KeyStorage.csproj" />
+  </ItemGroup>
+
+</Project>

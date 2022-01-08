@@ -1,0 +1,216 @@
+@page
+@model PNS4OneS.Pages.IndexModel
+@{
+    ViewData["Title"] = "Администрирование";
+}
+
+<script>
+    function copyTextToClipboard(text) {
+        let textArea = document.createElement("textarea");
+        textArea.value = text;
+
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.position = "fixed";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand("copy");
+        } catch (err) {
+            console.error("Unable copy to clipboard", err);
+        }
+
+        document.body.removeChild(textArea);
+    }
+
+    function onCreateAppClick() {
+        let appName = document.getElementById("appName").value;
+        if (appName == "") {
+            document.getElementById("noAppNameWarning").style.display = "";
+            return false;
+        }
+
+        return true;
+    }
+
+    function onExpandCollapseClick(appId, expand)
+    {
+        let btnExpand = document.getElementById("btnExpand_" + appId);
+        let btnCollapse = document.getElementById("btnCollapse_" + appId);
+        if (expand) {
+            btnExpand.style.display = "none";
+            btnCollapse.style.display = "";
+        } else {
+            btnExpand.style.display = "";
+            btnCollapse.style.display = "none";
+        }
+    }
+
+    function onDeleteAppClick(appId, appName) {
+        document.getElementById("deletedAppId").value = appId;
+        document.getElementById("deletedAppName").innerHTML = 'Удалить приложение <span style="font-weight: 600;">' + appName + '</span>?';
+    }
+
+    async function onUpdateServerKeyClick(appId) {
+        let formData = new FormData();
+        formData.append("appId", appId);
+        formData.append("sessionId", document.getElementById("sessionId").value);
+
+        let response = await fetch("/api/UpdateServerKey", {
+            method: 'POST',
+            body: formData
+        });
+        let result = await response.text();
+
+        document.getElementById("serverKey_" + appId).innerHTML = result;
+    }
+
+    async function onUpdateClientKeyClick(appId) {
+        let formData = new FormData();
+        formData.append("appId", appId);
+        formData.append("sessionId", document.getElementById("sessionId").value);
+
+        let response = await fetch("/api/UpdateClientKey", {
+            method: 'POST',
+            body: formData
+        });
+        let result = await response.text();
+
+        document.getElementById("clientKey_" + appId).innerHTML = result;
+    }
+
+    document.getElementById("changePwdLink").href = "/ChangePassword?SessionId=@Model.SessionId";
+</script>
+
+<h1 class="display-6">Подключенные приложения</h1>
+
+<button style="margin-top: 24px;" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+    </svg>
+    Создать приложение
+</button>
+
+<div class="modal fade" id="createApp" tabindex="-1" aria-labelledby="createAppLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form action="api/CreateApp" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createAppLabel">Создание приложения</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span id="noAppNameWarning" style="display: none;"><font color="red">Не указано название приложения.</font></span>
+                    <div class="mb-3">
+                        <label for="appName" class="col-form-label">Название приложения:</label>
+                        <input type="text" class="form-control" id="appName" name="appName" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-primary" onclick="return onCreateAppClick();">Создать</button>
+                </div>
+                <input type="hidden" id="sessionId" name="sessionId" value="@Model.SessionId" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteApp" tabindex="-1" aria-labelledby="deleteAppLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form action="api/DeleteApp" method="post">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAppLabel">Удаление приложения</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="deletedAppName">Удалить приложение?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="submit" class="btn btn-danger">Удалить</button>
+                </div>
+                <input type="hidden" name="appId" id="deletedAppId" />
+                <input type="hidden" name="sessionId" value="@Model.SessionId" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="list-group" style="margin-top: 24px; width: auto; max-width: 860px; margin: 4rem auto">
+
+    @foreach (var app in Model.ClientAppsManager.GetApps())
+    {
+        Model.NoClientApps = false;
+
+        <div class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <a id="btnExpand_@app.Id" href="#app_@app.Id" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="app_@app.Id" onclick="onExpandCollapseClick('@app.Id', true)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </a>
+            <a id="btnCollapse_@app.Id" href="#app_@app.Id" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="app_@app.Id" style="display: none;" onclick="onExpandCollapseClick('@app.Id', false)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                </svg>
+            </a>
+
+            <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                    <h5 class="mb-0" style="font-weight: 600;">@app.Title</h5>
+                    <p class="mb-0 opacity-75">ID: @app.Id</p>
+
+                    <div class="collapse" id="app_@app.Id" style="margin-top: 12px;">
+                        <span style="font-weight: 600;">Ключ сервера:</span>
+                        <span id="serverKey_@app.Id">@app.ServerKey</span>
+                        <a href="#" style="margin-left: 16px; text-decoration: none;" title="Скопировать в буфер обмена" onclick="copyTextToClipboard('@app.ServerKey')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="margin-left: 8px; text-decoration: none;" title="Обновить ключ" onclick="onUpdateServerKeyClick('@app.Id')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                            </svg>
+                        </a>
+
+                        <br />
+
+                        <span style="font-weight: 600;">Ключ клиента:</span>
+                        <span id="clientKey_@app.Id">@app.ClientKeyBase64</span>
+                        <a href="#" style="margin-left: 16px; text-decoration: none;" title="Скопировать в буфер обмена" onclick="copyTextToClipboard('@app.ClientKeyBase64')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" style="margin-left: 8px; text-decoration: none;" title="Обновить ключ" onclick="onUpdateClientKeyClick('@app.Id')">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                            </svg>
+                        </a>
+
+                        <br />
+
+                        <a href="#deleteApp" data-bs-toggle="modal" style="text-decoration: none; color: #d63384;" onclick="onDeleteAppClick('@app.Id', '@app.Title')">Удалить приложение</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+
+@if (Model.NoClientApps)
+{
+    <div class="text-center">
+        <p class="lead">Для отправки и приема push-уведомлений создайте приложение.</p>
+    </div>
+}

@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="ИспользоватьСервисУведомлений" id="1">
+			<DataPath>Настройки.ИспользоватьСервисУведомлений</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ИспользоватьСервисУведомленийКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ИспользоватьСервисУведомленийРасширеннаяПодсказка" id="3">
+				<AutoMaxWidth>false</AutoMaxWidth>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ИспользоватьСервисУведомленийПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<LabelDecoration name="ПредупреждениеОбОбязательныхПолях" id="43">
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<TextColor>style:SpecialTextColor</TextColor>
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Для возможности отправления и получения уведомлений необходимо заполнить все обязательные поля.</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ПредупреждениеОбОбязательныхПоляхКонтекстноеМеню" id="44"/>
+			<ExtendedTooltip name="ПредупреждениеОбОбязательныхПоляхРасширеннаяПодсказка" id="45"/>
+		</LabelDecoration>
+		<InputField name="ИдентификаторПриложения" id="40">
+			<DataPath>Настройки.ИдентификаторПриложения</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ID приложения</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<AutoChoiceIncomplete>true</AutoChoiceIncomplete>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ИдентификаторПриложенияКонтекстноеМеню" id="41"/>
+			<ExtendedTooltip name="ИдентификаторПриложенияРасширеннаяПодсказка" id="42">
+				<Title formatted="true">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>В &lt;link http://127.0.0.1:36697/&gt;панели администрирования&lt;/&gt; сервиса уведомлений создайте новое приложение и укажите его идентификатор (ID).</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+			<Events>
+				<Event name="OnChange">ИдентификаторПриложенияПриИзменении</Event>
+			</Events>
+		</InputField>
+		<UsualGroup name="ГруппаСерверОтправленияУведомлений" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Cервер отправления уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСерверОтправленияУведомленийРасширеннаяПодсказка" id="14"/>
+			<ChildItems>
+				<InputField name="АдресСервераОтправленияУведомлений" id="10">
+					<DataPath>Настройки.АдресСервераОтправленияУведомлений</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес сервера</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Например, "10.10.10.1", или "mycompanysrv:8843"</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="АдресСервераОтправленияУведомленийКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="АдресСервераОтправленияУведомленийРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">АдресСервераОтправленияУведомленийПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаКлючСервераОтправленияУведомлений" id="23">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ключ сервера отправления уведомлений</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКлючСервераОтправленияУведомленийРасширеннаяПодсказка" id="24"/>
+					<ChildItems>
+						<InputField name="КлючСервераОтправленияУведомлений" id="20">
+							<DataPath>КлючСервераОтправленияУведомлений</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ключ сервера</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<PasswordMode>true</PasswordMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="КлючСервераОтправленияУведомленийКонтекстноеМеню" id="21"/>
+							<ExtendedTooltip name="КлючСервераОтправленияУведомленийРасширеннаяПодсказка" id="22">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ключ сервера можно получить в &lt;link http://127.0.0.1:36697/&gt;панели администрирования&lt;/&gt; сервиса уведомлений.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">КлючСервераОтправленияУведомленийПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Button name="ПоказатьКлючСервераОтправленияУведомлений" id="25">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ПоказатьКлючСервераОтправленияУведомлений</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ПоказатьКлючСервераОтправленияУведомленийРасширеннаяПодсказка" id="26"/>
+						</Button>
+						<Button name="ИзменитьКлючСервераОтправленияУведомлений" id="27">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ИзменитьКлючСервераОтправленияУведомлений</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ИзменитьКлючСервераОтправленияУведомленийРасширеннаяПодсказка" id="28"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+				<CheckBoxField name="ИспользоватьЗащищенноеСоединение" id="15">
+					<DataPath>Настройки.ИспользоватьЗащищенноеСоединение</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ИспользоватьЗащищенноеСоединениеКонтекстноеМеню" id="16"/>
+					<ExtendedTooltip name="ИспользоватьЗащищенноеСоединениеРасширеннаяПодсказка" id="17">
+						<AutoMaxWidth>false</AutoMaxWidth>
+					</ExtendedTooltip>
+					<Events>
+						<Event name="OnChange">ИспользоватьЗащищенноеСоединениеПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Button name="СброситьКлючДоступаСервераОтправленияУведомлений" id="29">
+					<Type>Hyperlink</Type>
+					<CommandName>Form.Command.СброситьКлючДоступаСервераОтправленияУведомлений</CommandName>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Сбросить ключ доступа</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<ExtendedTooltip name="СброситьКлючДоступаСервераОтправленияУведомленийРасширеннаяПодсказка" id="30">
+						<AutoMaxWidth>false</AutoMaxWidth>
+						<MaxWidth>60</MaxWidth>
+					</ExtendedTooltip>
+				</Button>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСерверПриемаУведомлений" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Cервер приема уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<ExtendedTooltip name="ГруппаСерверПриемаУведомленийРасширеннаяПодсказка" id="19"/>
+			<ChildItems>
+				<InputField name="АдресСервераПолученияУведомлений" id="4">
+					<DataPath>Настройки.АдресСервераПолученияУведомлений</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес сервера</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Например, "10.10.10.1", или "mycompanysrv:8844"</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="АдресСервераПолученияУведомленийКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="АдресСервераПолученияУведомленийРасширеннаяПодсказка" id="6"/>
+					<Events>
+						<Event name="OnChange">АдресСервераПолученияУведомленийПриИзменении</Event>
+					</Events>
+				</InputField>
+				<UsualGroup name="ГруппаКлючКлиентаПриемаУведомлений" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ключ клиента приема уведомлений</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа ключ клиента приема уведомлений</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Group>AlwaysHorizontal</Group>
+					<Behavior>Usual</Behavior>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаКлючКлиентаПриемаУведомленийРасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<InputField name="КлючКлиентаПриемаУведомлений" id="31">
+							<DataPath>КлючКлиентаПриемаУведомлений</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ключ клиента</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+							<PasswordMode>true</PasswordMode>
+							<AutoMarkIncomplete>true</AutoMarkIncomplete>
+							<ContextMenu name="КлючКлиентаПриемаУведомленийКонтекстноеМеню" id="32"/>
+							<ExtendedTooltip name="КлючКлиентаПриемаУведомленийРасширеннаяПодсказка" id="33">
+								<Title formatted="true">
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Ключ клиента можно получить в &lt;link http://127.0.0.1:36697/&gt;панели администрирования&lt;/&gt; сервиса уведомлений.</v8:content>
+									</v8:item>
+								</Title>
+							</ExtendedTooltip>
+							<Events>
+								<Event name="OnChange">КлючКлиентаПриемаУведомленийПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Button name="ПоказатьКлючКлиентаПриемаУведомлений" id="36">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ПоказатьКлючКлиентаПриемаУведомлений</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Показать</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ПоказатьКлючКлиентаПриемаУведомленийРасширеннаяПодсказка" id="37"/>
+						</Button>
+						<Button name="ИзменитьКлючКлиентаПриемаУведомлений" id="38">
+							<Type>Hyperlink</Type>
+							<CommandName>Form.Command.ИзменитьКлючКлиентаПриемаУведомлений</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ИзменитьКлючКлиентаПриемаУведомленийРасширеннаяПодсказка" id="39"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Настройки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:InformationRegisterRecordManager.pns4ones_НастройкиСервисаУведомлений</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КлючСервераОтправленияУведомлений" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПредыдущиеЗначения" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Предыдущие значения</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="КлючКлиентаПриемаУведомлений" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Ключ клиента приема уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПоказатьКлючСервераОтправленияУведомлений" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать ключ сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать ключ сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьКлючСервераОтправленияУведомлений</Action>
+		</Command>
+		<Command name="ИзменитьКлючСервераОтправленияУведомлений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить ключ сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить ключ сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьКлючСервераОтправленияУведомлений</Action>
+		</Command>
+		<Command name="СброситьКлючДоступаСервераОтправленияУведомлений" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сбросить ключ доступа сервера отправления уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполните сброс ключа доступа к серверу отправления уведомлений, если при отправлении уведомлений возникает ошибка доступа. После сброса будет получен новый ключ доступа.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СброситьКлючДоступаСервераОтправленияУведомлений</Action>
+		</Command>
+		<Command name="ПоказатьКлючКлиентаПриемаУведомлений" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать ключ клиента приема уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать ключ клиента приема уведомлений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоказатьКлючКлиентаПриемаУведомлений</Action>
+		</Command>
+		<Command name="ИзменитьКлючКлиентаПриемаУведомлений" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить ключ клиента приема уведомлений</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Изменить ключ клиента приема уведомлений</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИзменитьКлючКлиентаПриемаУведомлений</Action>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,54 @@
+﻿@page
+@model PNS4OneS.Pages.SetupModel
+@{
+    ViewData["Title"] = "Настройка";
+}
+
+<script>
+    function comparePasswords()
+    {
+        let password = document.getElementById("floatingPassword").value;
+        let passwordConfirm = document.getElementById("floatingPasswordConfirm").value;
+
+        if (password != passwordConfirm)
+        {
+            document.getElementById("passwordMismatchText").style.display = "";
+            return false;
+        }
+
+        return true;
+    }
+
+    document.getElementById("changePwdButton").style.display = "none";
+</script>
+
+<div class="text-center">
+    <h1 class="h3 mb-3 fw-normal">Создание пользователя для управления сервисом</h1>
+    <p>Укажите имя пользователя, который будет управлять сервисом push-уведомлений для 1С и его пароль.</p>
+
+    @if (Model.NoName)
+    {
+        <font color="red">Не указано имя пользователя.</font><br />
+    }
+    @if (Model.NoPassword)
+    {
+        <font color="red">Не указан пароль.</font><br />
+    }
+    <font id="passwordMismatchText" color="red" style="display: none;">Введенные пароли не совпадают.</font><br />
+
+    <form class="form-signin" method="post">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="Имя пользователя" value="admin" />
+            <label for="floatingInput">Имя пользователя</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Пароль" autofocus />
+            <label for="floatingPassword">Пароль</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPasswordConfirm" placeholder="Подтверждение пароля" autofocus />
+            <label for="floatingPasswordConfirm">Подтверждение пароля</label>
+        </div>
+        <button class="w-100 btn align-content-lg-around btn-primary" type="submit" onclick="return comparePasswords()">Создать</button>
+    </form>
+</div>

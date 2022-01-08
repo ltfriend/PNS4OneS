@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.13">
+	<ConfigVersions>
+		<Metadata name="Catalog.Пользователи" id="a0bf585c-918e-4fe4-8900-1609e56a2693" configVersion="475e67808d863f736b5bdb822774d4279e07f81b"/>
+		<Metadata name="Catalog.УчетныеЗаписиЭлектроннойПочты" id="61274302-48fd-47f3-8508-847cd1dcd400" configVersion="1195ba2995f21d428ac72747368d4853357ffd30">
+			<Metadata name="Catalog.УчетныеЗаписиЭлектроннойПочты.Attribute.ВладелецУчетнойЗаписи" id="0a089163-9adc-4702-a6cc-c2dc004b111a"/>
+		</Metadata>
+		<Metadata name="CommonModule.pns4ones_СервисУведомлений" id="46b6adad-91d3-4132-b6e3-0310ab2449ae" configVersion="2be6d55d107b5df639fbb1ca3908367f2b32cc94"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомлений.Module" id="46b6adad-91d3-4132-b6e3-0310ab2449ae.0" configVersion="a2489d15b6fd2b0c89a05ca4f437b62b42f8e90d"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийВызовСервера" id="b198f640-2b7c-441a-864a-028ba36e7adb" configVersion="ceb4d01a686988173e8e61898f6a2c43c0219354"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийВызовСервера.Module" id="b198f640-2b7c-441a-864a-028ba36e7adb.0" configVersion="365fe75d2fd1086b151da0bcacedf38a87d95d72"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиент" id="13118581-78b8-4f6b-a848-e5d4808bc0eb" configVersion="b12f28d8db4e3453e8cd06fdc936f68150d15a21"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиент.Module" id="13118581-78b8-4f6b-a848-e5d4808bc0eb.0" configVersion="8bb0366270d1fb857cf50e3336a38929a4ce03b4"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентПовтИсп" id="51d6078e-3353-4435-897c-d6df0b92ba81" configVersion="fb33ed29623de0fe62bd6f56e5b41d0bff416e01"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентПовтИсп.Module" id="51d6078e-3353-4435-897c-d6df0b92ba81.0" configVersion="cbdd265e4a9a6aa52001fd59282d811703296231"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентСервер" id="3c27e81b-bcfa-48b8-95df-ff9c9a2ae854" configVersion="89c9e408716776903f8823e5b5ac81a273d6ae75"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентСервер.Module" id="3c27e81b-bcfa-48b8-95df-ff9c9a2ae854.0" configVersion="254410bb0fac171ecface72c78f75ee4e01956bc"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийПереопределяемый" id="59630c38-698b-43fe-b45d-acc95af50b7a" configVersion="c6c5789d5aa898ba24b28041a0e5879901b97e3c"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийПереопределяемый.Module" id="59630c38-698b-43fe-b45d-acc95af50b7a.0" configVersion="c63816f947ed68aa34247d97022589c6f05ff9b4"/>
+		<Metadata name="CommonModule.УправлениеЭлектроннойПочтой" id="426b5494-b904-42d2-89ab-38e18c9a0836" configVersion="606b13894973fac7cc83d46cd0bcab0a54d587bb"/>
+		<Metadata name="CommonModule.УправлениеЭлектроннойПочтой.Module" id="426b5494-b904-42d2-89ab-38e18c9a0836.0" configVersion="67e675b5e5c2058ae76e7b2c90bfe7b86b4e700b"/>
+		<Metadata name="CommonPicture.pns4ones_ДемоЗеленыйШар" id="f1e474f9-c296-4790-815b-fce6086deb2b" configVersion="7e41075c3b09027e346e4cbb07aafa4a178c6ecc"/>
+		<Metadata name="CommonPicture.pns4ones_ДемоЗеленыйШар.Picture" id="f1e474f9-c296-4790-815b-fce6086deb2b.0" configVersion="cfa94d504ee158d09479a89b52774a5e167bb5a7"/>
+		<Metadata name="CommonPicture.pns4ones_ДемоКрасныйШар" id="77c68c6a-d1ec-4e09-9a62-9178d9cdea07" configVersion="42fb3472903aa919319ced134156478338b0358b"/>
+		<Metadata name="CommonPicture.pns4ones_ДемоКрасныйШар.Picture" id="77c68c6a-d1ec-4e09-9a62-9178d9cdea07.0" configVersion="a881178ae07499038330e708a30710deb94dcf7b"/>
+		<Metadata name="CommonPicture.pns4ones_ПодсистемаСервисУведомлений" id="58b5f1a6-e5f2-46e9-b266-7682a1f4e3ee" configVersion="6d2add95af5723862250bc9fefc724eecb752641"/>
+		<Metadata name="CommonPicture.pns4ones_ПодсистемаСервисУведомлений.Picture" id="58b5f1a6-e5f2-46e9-b266-7682a1f4e3ee.0" configVersion="2570fac02290964e840f8b2fa3e33a6f50914830"/>
+		<Metadata name="CommonPicture.ДлительнаяОперация16" id="c63d62d8-1487-4e3d-8e68-f56d345176f5" configVersion="f1e1a90a72384367e1b5322b7fe8835554e9d427"/>
+		<Metadata name="CommonTemplate.PNS4OneSComp" id="9a789894-b709-4952-bc3d-5b3e27340bc7" configVersion="45b9bcc5cc72678693e59233f21e2d653984ed3b"/>
+		<Metadata name="CommonTemplate.PNS4OneSComp.Template" id="9a789894-b709-4952-bc3d-5b3e27340bc7.0" configVersion="a382a1f8fcb458b91b6dad12a31761837f0fbc36"/>
+		<Metadata name="Configuration.com_ptolkachev_pns4ones" id="da0d74ae-e58c-4d04-99fd-42e764325b98" configVersion="71b49f78e1a8adf9912f1e39f45a279472dc9cc8"/>
+		<Metadata name="Configuration.com_ptolkachev_pns4ones.ManagedApplicationModule" id="95b67a76-f6f5-4b65-962d-d250c4a86281.6" configVersion="858e8edcca88ccfdbc43f8f7ae3eab78516e8921"/>
+		<Metadata name="Configuration.com_ptolkachev_pns4ones.SessionModule" id="95b67a76-f6f5-4b65-962d-d250c4a86281.7" configVersion="39def409365fccf10231c73ec523367b0541ac4c"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоДлительнаяОперацияНаСервереСОтображениемПрогресса" id="b178a37d-f461-45a9-b7f1-8aa53bf3b166" configVersion="907ea34733008c8a4f4ddee2a6e2bbf24077c88f"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоДлительнаяОперацияНаСервереСОтображениемПрогресса.Form.Форма" id="cee453e3-93b5-4634-a176-fe3f1be9e19c" configVersion="636d97485e0478e43e22cdf60b3de7f0d600aefe"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоДлительнаяОперацияНаСервереСОтображениемПрогресса.Form.Форма.Form" id="cee453e3-93b5-4634-a176-fe3f1be9e19c.0" configVersion="08a7d0701f24973720cd342f6b6370675e521d19"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоДлительнаяОперацияНаСервереСОтображениемПрогресса.ObjectModule" id="b178a37d-f461-45a9-b7f1-8aa53bf3b166.0" configVersion="b5f9fc70ebac74f8fd4dfbaed6e64593a754fbc3"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаКлиент" id="9a9a61c3-a9da-45ed-827c-9e8531b19f3d" configVersion="e019c2db9b3a72637b48a7e98020ec72f88d5a01"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаКлиент.Form.Форма" id="77fc6957-0e0f-459f-a286-691ec1bd0e71" configVersion="c5a86ea68805f1be232a059cb9a946aadd4024db"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаКлиент.Form.Форма.Form" id="77fc6957-0e0f-459f-a286-691ec1bd0e71.0" configVersion="c9a65ed2736b95ba25c8d2f17995c9bda230344f"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаСервер" id="76845c42-92ea-49d4-ab7d-1e6811115315" configVersion="21e2857847892613a52a8869dad10078a371b14b"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаСервер.Form.Форма" id="4d17e030-8e12-44b6-b8fe-d14c6ed16ded" configVersion="db40ccbd7bc1eba935a04d1280fb1afc5de875d5"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоКаменьНожницыБумагаСервер.Form.Форма.Form" id="4d17e030-8e12-44b6-b8fe-d14c6ed16ded.0" configVersion="e7fd77893d67c5fc2032eabdfa170bf08eb31477"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатКлиент" id="23474777-cbea-4d55-b08f-fba256ed5c2c" configVersion="e1091e1064775755a56e47ea0484746a57223a39"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатКлиент.Form.Форма" id="bf45eb1b-e819-478d-b8b9-0c69961502e7" configVersion="893c557ee20ad31217e04909680b02adfa6defba"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатКлиент.Form.Форма.Form" id="bf45eb1b-e819-478d-b8b9-0c69961502e7.0" configVersion="45ef18208f5f2f307427786ed388e40e80fa5c3d"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатСервер" id="046e3e2d-7cf2-4e3b-8b5e-4eb6712dc4d5" configVersion="e94e72497a65a228dc0894600892cdb5c455e623"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатСервер.Form.Форма" id="55f52880-4995-4cbe-8eca-4299b59d0355" configVersion="9791d39949a0c38ee45bf0d4a140611c5a3c1651"/>
+		<Metadata name="DataProcessor.pns4ones_ДемоЧатСервер.Form.Форма.Form" id="55f52880-4995-4cbe-8eca-4299b59d0355.0" configVersion="d4f42452389233b23e1cf1f218984a9ed450d669"/>
+		<Metadata name="DataProcessor.pns4ones_КомпонентаСервисаУведомлений" id="e8405bb3-e68b-4234-9d28-e14db526d765" configVersion="a137d1b43bad6c8cbcbb7e755cd59df904601f1a">
+			<Metadata name="DataProcessor.pns4ones_КомпонентаСервисаУведомлений.Command.СостояниеКомпонентыСервисаУведомлений" id="98f2dc40-658d-4e80-9177-53d4cdb0ceab"/>
+		</Metadata>
+		<Metadata name="DataProcessor.pns4ones_КомпонентаСервисаУведомлений.Command.СостояниеКомпонентыСервисаУведомлений.CommandModule" id="98f2dc40-658d-4e80-9177-53d4cdb0ceab.2" configVersion="d41264a60d32d45098add1a424682cb4ad950dbb"/>
+		<Metadata name="DataProcessor.pns4ones_КомпонентаСервисаУведомлений.Form.СостояниеКомпонентыСервисаУведомлений" id="5b28e3d9-753d-4745-af6e-828dd1f4a40e" configVersion="8b039bea6e8071c7d1f16653c676238c7f6728da"/>
+		<Metadata name="DataProcessor.pns4ones_КомпонентаСервисаУведомлений.Form.СостояниеКомпонентыСервисаУведомлений.Form" id="5b28e3d9-753d-4745-af6e-828dd1f4a40e.0" configVersion="0a0b405443d942e84ad7f2ecfb8145956a5c0245"/>
+		<Metadata name="DataProcessor.pns4ones_НастройкаСервисаУведомлений" id="cb414bc9-48a0-41ad-97c9-64aa975c336c" configVersion="8cd41f7671915d8b50c56b556d88ed0decdaff13">
+			<Metadata name="DataProcessor.pns4ones_НастройкаСервисаУведомлений.Command.НастройкаСервисаУведомлений" id="c8658617-e31e-4b2c-9970-81c258e9fb98"/>
+		</Metadata>
+		<Metadata name="DataProcessor.pns4ones_НастройкаСервисаУведомлений.Command.НастройкаСервисаУведомлений.CommandModule" id="c8658617-e31e-4b2c-9970-81c258e9fb98.2" configVersion="98ffa87660fa21a9f56faa735fd0c1723f7796dd"/>
+		<Metadata name="DataProcessor.pns4ones_НастройкаСервисаУведомлений.Form.НастройкаСервисаУведомлений" id="f611c5d4-30c5-4f60-92fe-97766ac2bd80" configVersion="5b1d30bacba0202d14e87acf62cc484f0b211ae9"/>
+		<Metadata name="DataProcessor.pns4ones_НастройкаСервисаУведомлений.Form.НастройкаСервисаУведомлений.Form" id="f611c5d4-30c5-4f60-92fe-97766ac2bd80.0" configVersion="25b5a6624ee76191959ef6dc447e3333a9283ec2"/>
+		<Metadata name="Document.ЭлектронноеПисьмоВходящее" id="94462f92-00fa-4564-8574-ec2409b5a90d" configVersion="06852e818ebc789e4e1eab7eb3d505a6bce2d7c3">
+			<Metadata name="Document.ЭлектронноеПисьмоВходящее.Attribute.УчетнаяЗапись" id="00909212-06a2-4804-a94b-4ac7eb61c22b"/>
+		</Metadata>
+		<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений" id="cf53d6d4-5940-4091-95e4-df254292422b" configVersion="146f941932788318955aa8679c89d17dd6932328">
+			<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений.Resource.АдресСервераОтправленияУведомлений" id="3adaf777-2401-4a05-a9d2-cd01cf79c6a6"/>
+			<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений.Resource.ИспользоватьЗащищенноеСоединение" id="69798897-7ea4-4554-9161-bf38e4c3f2ae"/>
+			<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений.Resource.ИспользоватьСервисУведомлений" id="c34f7ec2-c719-43cd-8267-f4fdf348866f"/>
+			<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений.Resource.АдресСервераПолученияУведомлений" id="c3bdbc5d-f1cc-4498-857b-341323332a6a"/>
+			<Metadata name="InformationRegister.pns4ones_НастройкиСервисаУведомлений.Resource.ИдентификаторПриложения" id="c3f72e80-32a5-4141-957d-542988d3c8b5"/>
+		</Metadata>
+		<Metadata name="Language.Русский" id="c3202948-9516-4c93-b614-6a8235a1669b" configVersion="e45da1d52f6ba4ee43160c0d06feb454b0192a10"/>
+		<Metadata name="Role.pns4ones_АдминистрированиеСервисаУведомлений" id="e3d81384-2612-4993-a92b-e0f3c1dfb6a7" configVersion="de65cd8c3faaef2af643c3d079fbd7145310a969"/>
+		<Metadata name="Role.pns4ones_АдминистрированиеСервисаУведомлений.Rights" id="e3d81384-2612-4993-a92b-e0f3c1dfb6a7.0" configVersion="57dcc767369e3ed3830249ec7345c75f071256b0"/>
+		<Metadata name="Role.pns4ones_ИспользованиеСервисаУведомлений" id="a7cfc42b-a630-4001-b7a5-1cbdc7c3bbc2" configVersion="908c3da909146a4034cbd59d943dad14216863c6"/>
+		<Metadata name="Role.pns4ones_ИспользованиеСервисаУведомлений.Rights" id="a7cfc42b-a630-4001-b7a5-1cbdc7c3bbc2.0" configVersion="560f1c25a06d0b9e801e4272e974744ac44c488a"/>
+		<Metadata name="Subsystem.pns4ones_СервисУведомлений" id="5df9c6f1-59b6-4571-9861-c02fcb305afd" configVersion="f12d1567272cb01e94089a227952933b2953377e"/>
+		<Metadata name="Subsystem.pns4ones_СервисУведомлений.CommandInterface" id="5df9c6f1-59b6-4571-9861-c02fcb305afd.1" configVersion="41f9ee732d995de927cb4315c1402c86ba6b51e0"/>
+		<Metadata name="Subsystem.pns4ones_СервисУведомлений.Subsystem.ДемонстрацияРаботыСУведомлениями" id="a0df6434-ddb8-486a-9e9e-3a613454c535" configVersion="7fd5c8ff98b9fa5488afd1dfc210c432978637ea"/>
+		<Metadata name="Subsystem.pns4ones_СервисУведомлений.Subsystem.ДемонстрацияРаботыСУведомлениями.CommandInterface" id="a0df6434-ddb8-486a-9e9e-3a613454c535.1" configVersion="15d49829c30d157edb2058d4a4cfb9323860505b"/>
+		<Metadata name="Task.ЗадачаИсполнителя" id="b2b9c251-a566-409b-bc44-6480fa6d721a" configVersion="0908aba267828ab17eec279befab11cfa028b3c7">
+			<Metadata name="Task.ЗадачаИсполнителя.AddressingAttribute.Исполнитель" id="65759ec1-753b-4c8a-af88-8157ee8da273"/>
+		</Metadata>
+		<Metadata name="Task.ЗадачаИсполнителя.ObjectModule" id="b2b9c251-a566-409b-bc44-6480fa6d721a.6" configVersion="af6937dbe26398fd524386b895aab10026b1dd65"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

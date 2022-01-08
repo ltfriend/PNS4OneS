@@ -1,0 +1,7 @@
+LIBRARY    "pns4onescomp"
+
+EXPORTS
+GetClassObject
+DestroyObject
+GetClassNames
+SetPlatformCapabilities

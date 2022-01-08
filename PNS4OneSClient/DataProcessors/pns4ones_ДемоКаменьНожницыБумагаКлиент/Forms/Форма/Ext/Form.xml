@@ -1,0 +1,924 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>None</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<Page name="СтраницаПодключениеКСерверу" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Подключение к серверу</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаПодключениеКСерверуРасширеннаяПодсказка" id="4"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияПодключениеКСерверу" id="24">
+							<Font ref="style:LargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Подключение к серверу</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияПодключениеКСерверуКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ДекорацияПодключениеКСерверуРасширеннаяПодсказка" id="26"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаСостояниеПоискаСерверов" id="29">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Состояние поиска серверов</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаСостояниеПоискаСерверовРасширеннаяПодсказка" id="30"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаПоискСерверов" id="31">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка поиск серверов</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="КартинкаПоискСерверовКонтекстноеМеню" id="32"/>
+									<ExtendedTooltip name="КартинкаПоискСерверовРасширеннаяПодсказка" id="33"/>
+								</PictureDecoration>
+								<LabelDecoration name="НадписьПоискСерверов" id="34">
+									<TextColor>#807A59</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выполняется поиск серверов...</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьПоискСерверовКонтекстноеМеню" id="35"/>
+									<ExtendedTooltip name="НадписьПоискСерверовРасширеннаяПодсказка" id="36"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="СписокСерверов" id="5">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<MaxWidth>50</MaxWidth>
+							<AutoMaxHeight>false</AutoMaxHeight>
+							<MaxHeight>7</MaxHeight>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>СписокСерверов</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>OutputList</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>SelectAll</ExcludedCommand>
+								<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="СписокСерверовКонтекстноеМеню" id="6"/>
+							<AutoCommandBar name="СписокСерверовКоманднаяПанель" id="7">
+								<ChildItems>
+									<Button name="СписокСерверовПоискСерверов" id="27">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПоискСерверов</CommandName>
+										<ExtendedTooltip name="СписокСерверовПоискСерверовРасширеннаяПодсказка" id="28"/>
+									</Button>
+									<Button name="СписокСерверовПодключитьсяКСерверу" id="37">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПодключитьсяКСерверу</CommandName>
+										<ExtendedTooltip name="СписокСерверовПодключитьсяКСерверуРасширеннаяПодсказка" id="38"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СписокСерверовРасширеннаяПодсказка" id="8"/>
+							<SearchStringAddition name="СписокСерверовСтрокаПоиска" id="9">
+								<AdditionSource>
+									<Item>СписокСерверов</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСерверовСтрокаПоискаКонтекстноеМеню" id="10"/>
+								<ExtendedTooltip name="СписокСерверовСтрокаПоискаРасширеннаяПодсказка" id="11"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СписокСерверовСостояниеПросмотра" id="12">
+								<AdditionSource>
+									<Item>СписокСерверов</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСерверовСостояниеПросмотраКонтекстноеМеню" id="13"/>
+								<ExtendedTooltip name="СписокСерверовСостояниеПросмотраРасширеннаяПодсказка" id="14"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СписокСерверовУправлениеПоиском" id="15">
+								<AdditionSource>
+									<Item>СписокСерверов</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СписокСерверовУправлениеПоискомКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="СписокСерверовУправлениеПоискомРасширеннаяПодсказка" id="17"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СписокСерверовВыбор</Event>
+							</Events>
+							<ChildItems>
+								<LabelField name="СписокСерверовИмяСервера" id="18">
+									<DataPath>СписокСерверов.ИмяСервера</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокСерверовИмяСервераКонтекстноеМеню" id="19"/>
+									<ExtendedTooltip name="СписокСерверовИмяСервераРасширеннаяПодсказка" id="20"/>
+								</LabelField>
+								<LabelField name="СписокСерверовСостояниеСервера" id="21">
+									<DataPath>СписокСерверов.СостояниеСервера</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Состояние</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокСерверовСостояниеСервераКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="СписокСерверовСостояниеСервераРасширеннаяПодсказка" id="23"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаОжиданиеПротивника" id="39">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ожидание противника</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаОжиданиеПротивникаРасширеннаяПодсказка" id="40"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияОжиданиеПротивника" id="62">
+							<Font ref="style:LargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Начало игры</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияОжиданиеПротивникаКонтекстноеМеню" id="63"/>
+							<ExtendedTooltip name="ДекорацияОжиданиеПротивникаРасширеннаяПодсказка" id="64"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаИгрокПротивник" id="41">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Игрок и противник</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаИгрокПротивникРасширеннаяПодсказка" id="42"/>
+							<ChildItems>
+								<UsualGroup name="ГруппаИгрок" id="43">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Игрок</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаИгрокРасширеннаяПодсказка" id="44"/>
+									<ChildItems>
+										<LabelField name="ИмяИгрока" id="45">
+											<DataPath>ИмяИгрока</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Width>28</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Font ref="style:LargeTextFont" kind="StyleItem"/>
+											<ContextMenu name="ИмяИгрокаКонтекстноеМеню" id="46"/>
+											<ExtendedTooltip name="ИмяИгрокаРасширеннаяПодсказка" id="47"/>
+										</LabelField>
+										<UsualGroup name="ГруппаКомандыГотовностиИгрока" id="58">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Команды готовности игрока</v8:content>
+												</v8:item>
+											</Title>
+											<Width>28</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Group>AlwaysHorizontal</Group>
+											<HorizontalAlign>Center</HorizontalAlign>
+											<Behavior>Usual</Behavior>
+											<Representation>None</Representation>
+											<ShowTitle>false</ShowTitle>
+											<ExtendedTooltip name="ГруппаКомандыГотовностиИгрокаРасширеннаяПодсказка" id="59"/>
+											<ChildItems>
+												<Button name="ПодтвердитьГотовность" id="48">
+													<Type>UsualButton</Type>
+													<Representation>PictureAndText</Representation>
+													<CommandName>Form.Command.ПодтвердитьГотовность</CommandName>
+													<BackColor>style:ActivityColor</BackColor>
+													<Picture>
+														<xr:Ref>CommonPicture.pns4ones_ДемоКрасныйШар</xr:Ref>
+														<xr:LoadTransparent>true</xr:LoadTransparent>
+													</Picture>
+													<ExtendedTooltip name="ПодтвердитьГотовностьРасширеннаяПодсказка" id="49"/>
+												</Button>
+												<Button name="ОтключитьсяОтСервера" id="60">
+													<Type>UsualButton</Type>
+													<CommandName>Form.Command.ОтключитьсяОтСервера</CommandName>
+													<ExtendedTooltip name="ОтключитьсяОтСервераРасширеннаяПодсказка" id="61"/>
+												</Button>
+											</ChildItems>
+										</UsualGroup>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаПротивник" id="50">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Противник</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Behavior>Usual</Behavior>
+									<Representation>StrongSeparation</Representation>
+									<ExtendedTooltip name="ГруппаПротивникРасширеннаяПодсказка" id="51"/>
+									<ChildItems>
+										<LabelField name="ИмяПротивника" id="52">
+											<DataPath>ИмяПротивника</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Width>28</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<Font ref="style:LargeTextFont" kind="StyleItem"/>
+											<ContextMenu name="ИмяПротивникаКонтекстноеМеню" id="53"/>
+											<ExtendedTooltip name="ИмяПротивникаРасширеннаяПодсказка" id="54"/>
+										</LabelField>
+										<LabelField name="СостояниеПротивника" id="55">
+											<DataPath>СостояниеПротивника</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<Width>28</Width>
+											<HorizontalStretch>false</HorizontalStretch>
+											<ContextMenu name="СостояниеПротивникаКонтекстноеМеню" id="56"/>
+											<ExtendedTooltip name="СостояниеПротивникаРасширеннаяПодсказка" id="57"/>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаИгра" id="65">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Игра</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаИграРасширеннаяПодсказка" id="66"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияИгра" id="67">
+							<Font ref="style:LargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Сделайте выбор</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияИграКонтекстноеМеню" id="68"/>
+							<ExtendedTooltip name="ДекорацияИграРасширеннаяПодсказка" id="69"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияОтступ1" id="86">
+							<ContextMenu name="ДекорацияОтступ1КонтекстноеМеню" id="87"/>
+							<ExtendedTooltip name="ДекорацияОтступ1РасширеннаяПодсказка" id="88"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаВыборИгрока" id="92">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа выбор игрока</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаВыборИгрокаРасширеннаяПодсказка" id="93"/>
+							<ChildItems>
+								<RadioButtonField name="ВыборИгрока" id="72">
+									<DataPath>ВыборИгрока</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<RadioButtonType>Tumbler</RadioButtonType>
+									<ChoiceList>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">Камень</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">Ножницы</Value>
+											</xr:Value>
+										</xr:Item>
+										<xr:Item>
+											<xr:Presentation/>
+											<xr:CheckState>0</xr:CheckState>
+											<xr:Value xsi:type="FormChoiceListDesTimeValue">
+												<Presentation/>
+												<Value xsi:type="xs:string">Бумага</Value>
+											</xr:Value>
+										</xr:Item>
+									</ChoiceList>
+									<ContextMenu name="ВыборИгрокаКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ВыборИгрокаРасширеннаяПодсказка" id="74"/>
+								</RadioButtonField>
+								<LabelDecoration name="ДекорацияОтступ2" id="89">
+									<ContextMenu name="ДекорацияОтступ2КонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="ДекорацияОтступ2РасширеннаяПодсказка" id="91"/>
+								</LabelDecoration>
+								<Button name="ПодтвердитьВыбор" id="70">
+									<Type>UsualButton</Type>
+									<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+									<CommandName>Form.Command.ПодтвердитьВыбор</CommandName>
+									<BackColor>style:ActivityColor</BackColor>
+									<ExtendedTooltip name="ПодтвердитьВыборРасширеннаяПодсказка" id="71"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<LabelDecoration name="ДекорацияОтступ3" id="83">
+							<ContextMenu name="ДекорацияОтступ3КонтекстноеМеню" id="84"/>
+							<ExtendedTooltip name="ДекорацияОтступ3РасширеннаяПодсказка" id="85"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаОжиданиеВыбораПротивника" id="78">
+							<Visible>false</Visible>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа ожидание выбора противника</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаОжиданиеВыбораПротивникаРасширеннаяПодсказка" id="79"/>
+							<ChildItems>
+								<PictureDecoration name="КартинкаОжиданиеВыбораПротивника" id="80">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Картинка ожидание выбора противника</v8:content>
+										</v8:item>
+									</Title>
+									<Picture>
+										<xr:Ref>CommonPicture.ДлительнаяОперация16</xr:Ref>
+										<xr:LoadTransparent>true</xr:LoadTransparent>
+									</Picture>
+									<ContextMenu name="КартинкаОжиданиеВыбораПротивникаКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="КартинкаОжиданиеВыбораПротивникаРасширеннаяПодсказка" id="82"/>
+								</PictureDecoration>
+								<LabelDecoration name="НадписьОжиданиеВыбораПротивника" id="75">
+									<TextColor>#807A59</TextColor>
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Ожидание выбора противника...</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="НадписьОжиданиеВыбораПротивникаКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="НадписьОжиданиеВыбораПротивникаРасширеннаяПодсказка" id="77"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРезультатИгры" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат игры</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаРезультатИгрыРасширеннаяПодсказка" id="95"/>
+					<ChildItems>
+						<LabelDecoration name="ДекорацияРезультатИгры" id="96">
+							<Font ref="style:LargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Результат игры</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="ДекорацияРезультатИгрыКонтекстноеМеню" id="97"/>
+							<ExtendedTooltip name="ДекорацияРезультатИгрыРасширеннаяПодсказка" id="98"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияОтступ4" id="99">
+							<ContextMenu name="ДекорацияОтступ4КонтекстноеМеню" id="100"/>
+							<ExtendedTooltip name="ДекорацияОтступ4РасширеннаяПодсказка" id="101"/>
+						</LabelDecoration>
+						<LabelField name="ВыборИгрокаРезультат" id="105">
+							<DataPath>ВыборИгрока</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ваш выбор</v8:content>
+								</v8:item>
+							</Title>
+							<TextColor>style:AccentColor</TextColor>
+							<ContextMenu name="ВыборИгрокаРезультатКонтекстноеМеню" id="106"/>
+							<ExtendedTooltip name="ВыборИгрокаРезультатРасширеннаяПодсказка" id="107"/>
+						</LabelField>
+						<LabelField name="ВыборПротивника" id="111">
+							<DataPath>ВыборПротивника</DataPath>
+							<TextColor>style:AccentColor</TextColor>
+							<ContextMenu name="ВыборПротивникаКонтекстноеМеню" id="112"/>
+							<ExtendedTooltip name="ВыборПротивникаРасширеннаяПодсказка" id="113"/>
+						</LabelField>
+						<LabelDecoration name="ДекорацияОтступ5" id="108">
+							<ContextMenu name="ДекорацияОтступ5КонтекстноеМеню" id="109"/>
+							<ExtendedTooltip name="ДекорацияОтступ5РасширеннаяПодсказка" id="110"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьИгрокПобедил" id="102">
+							<TextColor>#008000</TextColor>
+							<Font ref="style:ExtraLargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Поздравляем! Вы победили!</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="НадписьИгрокПобедилКонтекстноеМеню" id="103"/>
+							<ExtendedTooltip name="НадписьИгрокПобедилРасширеннаяПодсказка" id="104"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьНичья" id="126">
+							<TextColor>#808000</TextColor>
+							<Font ref="style:ExtraLargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Ничья.</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="НадписьНичьяКонтекстноеМеню" id="127"/>
+							<ExtendedTooltip name="НадписьНичьяРасширеннаяПодсказка" id="128"/>
+						</LabelDecoration>
+						<LabelDecoration name="НадписьПротивникПобедил" id="114">
+							<TextColor>#FF0000</TextColor>
+							<Font ref="style:ExtraLargeTextFont" kind="StyleItem"/>
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Противник победил.</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<ContextMenu name="НадписьПротивникПобедилКонтекстноеМеню" id="115"/>
+							<ExtendedTooltip name="НадписьПротивникПобедилРасширеннаяПодсказка" id="116"/>
+						</LabelDecoration>
+						<LabelDecoration name="ДекорацияОтступ6" id="119">
+							<ContextMenu name="ДекорацияОтступ6КонтекстноеМеню" id="120"/>
+							<ExtendedTooltip name="ДекорацияОтступ6РасширеннаяПодсказка" id="121"/>
+						</LabelDecoration>
+						<UsualGroup name="ГруппаКомандыРезультатаИгры" id="117">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Команды результата игры</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Center</GroupHorizontalAlign>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Usual</Behavior>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаКомандыРезультатаИгрыРасширеннаяПодсказка" id="118"/>
+							<ChildItems>
+								<Button name="НачатьИгруЗаново" id="122">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.НачатьИгруЗаново</CommandName>
+									<BackColor>style:ActivityColor</BackColor>
+									<ExtendedTooltip name="НачатьИгруЗановоРасширеннаяПодсказка" id="123"/>
+								</Button>
+								<Button name="ОтключитьсяОтСервераЗавершение" id="124">
+									<Type>UsualButton</Type>
+									<CommandName>Form.Command.ОтключитьсяОтСервера</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Завершить игру</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ОтключитьсяОтСервераЗавершениеРасширеннаяПодсказка" id="125"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.pns4ones_ДемоКаменьНожницыБумагаКлиент</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокСерверов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список серверов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИдентификаторСервера" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор сервера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ИмяСервера" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя сервера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="КаналСервера" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Канал сервера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="СостояниеСервера" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние сервера</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Доступен" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КаналСервера" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Канал сервера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторСервера" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор сервера</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторИгрока" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор игрока</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяИгрока" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя игрока</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеИгры" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние игры</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИмяПротивника" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя противника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СостояниеПротивника" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние противника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИдентификаторПротивника" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Идентификатор противника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПротивникГотов" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Противник готов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИгрокГотов" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Игрок готов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборИгрока" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор игрока</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборПротивника" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбор противника</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПоискСерверов" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поиск серверов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить поиск серверов игры.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПоискСерверов</Action>
+		</Command>
+		<Command name="ПодключитьсяКСерверу" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключиться</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключиться к серверу.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодключитьсяКСерверу</Action>
+		</Command>
+		<Command name="ПодтвердитьГотовность" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Готов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить готовность.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодтвердитьГотовность</Action>
+		</Command>
+		<Command name="ОтключитьсяОтСервера" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Покинуть сервер</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отключиться от сервера.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтключитьсяОтСервера</Action>
+		</Command>
+		<Command name="ПодтвердитьВыбор" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подтвердить выбор.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПодтвердитьВыбор</Action>
+		</Command>
+		<Command name="НачатьИгруЗаново" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Играть ещё</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Начать игру заново.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>НачатьИгруЗаново</Action>
+		</Command>
+	</Commands>
+</Form>

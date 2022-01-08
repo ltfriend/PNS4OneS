@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.13">
+	<Task uuid="b2b9c251-a566-409b-bc44-6480fa6d721a">
+		<InternalInfo>
+			<xr:GeneratedType name="TaskObject.ЗадачаИсполнителя" category="Object">
+				<xr:TypeId>f76c2b93-626a-4e7a-8991-783371f17ba2</xr:TypeId>
+				<xr:ValueId>ede9dac2-32ab-47db-a6cf-979d3c436671</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="TaskRef.ЗадачаИсполнителя" category="Ref">
+				<xr:TypeId>24ab2d42-53cf-485a-87d2-c48a1d59a9d9</xr:TypeId>
+				<xr:ValueId>da5299bd-1e73-4dc7-9aaf-8f19ce09767a</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="TaskSelection.ЗадачаИсполнителя" category="Selection">
+				<xr:TypeId>28fe429a-9244-440f-8a92-c45624094642</xr:TypeId>
+				<xr:ValueId>85ddc328-9e06-49e3-8a51-24e9848c4f95</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="TaskList.ЗадачаИсполнителя" category="List">
+				<xr:TypeId>48d86fb0-d509-4f19-a961-4f109cf0c6f5</xr:TypeId>
+				<xr:ValueId>f3c2d072-b90f-4179-92bf-12c6c171382c</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="TaskManager.ЗадачаИсполнителя" category="Manager">
+				<xr:TypeId>c5717b39-7714-45fc-9565-234cf5100168</xr:TypeId>
+				<xr:ValueId>96a09cf9-32a5-452b-8e32-3d85a173032b</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ЗадачаИсполнителя</Name>
+			<Comment/>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+			<ExtendedConfigurationObject>3ad08f4a-6202-4099-b6cc-bc116e6731a0</ExtendedConfigurationObject>
+		</Properties>
+		<ChildObjects>
+			<AddressingAttribute uuid="65759ec1-753b-4c8a-af88-8157ee8da273">
+				<InternalInfo/>
+				<Properties>
+					<Name>Исполнитель</Name>
+					<Comment/>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<ExtendedConfigurationObject>88f44c9b-216d-4d7e-bc88-1e6b253ed01e</ExtendedConfigurationObject>
+					<Type>
+						<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
+					</Type>
+				</Properties>
+			</AddressingAttribute>
+		</ChildObjects>
+	</Task>
+</MetaDataObject>
