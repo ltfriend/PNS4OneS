@@ -35,6 +35,8 @@ namespace PNS4OneS
         private readonly Task[] sendingMessageWorkers = new Task[SENDING_MESSAGE_WORKERS_COUNT];
         private readonly Channel<MessageToSend> messagesChannel = Channel.CreateUnbounded<MessageToSend>();
 
+        private bool stoppedService = false;
+
         public NotificationServer(ILogger logger)
         {
             this.logger = logger;
@@ -42,6 +44,8 @@ namespace PNS4OneS
 
         public void RunAsync(ServiceConfiguration configuration)
         {
+            stoppedService = false;
+
             socket = new(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Bind(configuration.EndPoint);
             socket.Listen();
@@ -59,6 +63,8 @@ namespace PNS4OneS
 
         public void Stop()
         {
+            stoppedService = true;
+
             for (int i = 0; i < SENDING_MESSAGE_WORKERS_COUNT; i++)
                 messagesChannel.Writer.TryWrite(MessageToSend.TerminatedMessage());
             Task.WaitAll(sendingMessageWorkers);
@@ -130,9 +136,14 @@ namespace PNS4OneS
                 }
                 catch (Exception e)
                 {
-                    logger.LogWarning(
-                        "Произошла ошибка при определении состояния сокетов: {message}. Отправление сообщений прервано.",
-                        e.Message);
+                    if (!stoppedService)
+                    {
+                        // При остановке сервиса закрывается сокет и так же возникает исключение.
+                        // В этом случае оно просто игнорируется.
+                        logger.LogWarning(
+                            "Произошла ошибка при определении состояния сокетов: {message}. Отправление сообщений прервано.",
+                            e.Message);
+                    }
                     break;
                 }
 

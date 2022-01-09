@@ -39,7 +39,7 @@ namespace PNS4OneS
 
             var hostAdmin = CreateHostBuilderAdmin(configuration.ServiceConfiguration).Build();
             var hostService = CreateHostBuilderService(configuration.ListeningConfiguration).Build();
-            var logger = hostService.Services.GetRequiredService<ILogger<Program>>();
+            var logger = hostAdmin.Services.GetRequiredService<ILogger<Program>>();
 
             InitClientAppsManager(logger);
             AdminAccount.ReadAccount(logger);
@@ -48,8 +48,8 @@ namespace PNS4OneS
             MessageSender = server;
 
             server.RunAsync(configuration.ServiceConfiguration);
-            hostAdmin.RunAsync();
-            hostService.Run();
+            hostService.RunAsync();
+            hostAdmin.Run();
 
             server.Stop();
 
@@ -94,6 +94,7 @@ namespace PNS4OneS
         private static IHostBuilder CreateHostBuilderAdmin(ServiceConfiguration configuration)
         {
             return Host.CreateDefaultBuilder()
+                .UseWindowsService()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<StartupAdmin>();
