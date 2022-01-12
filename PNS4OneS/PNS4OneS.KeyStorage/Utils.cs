@@ -1,24 +1,25 @@
-﻿namespace PNS4OneS.KeyStorage
+﻿using System;
+using System.IO;
+
+namespace PNS4OneS.KeyStorage
 {
     public static class Utils
     {
         public static string GetConfFilesLocale()
         {
-            if (System.OperatingSystem.IsLinux())
-                return "/etc/pns4ones/";
-
-            string path = System.Reflection.Assembly.GetExecutingAssembly().Location;
-
-            for (int i = path.Length - 1; i >= 0; i--)
+            if (OperatingSystem.IsLinux())
             {
-                if (path[i] == '\\' || path[i] == '/')
-                {
-                    path = path[..i];
-                    break;
-                }
+                return "/etc/pns4ones/";
             }
+            else
+            {
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\PNS4OneS";
 
-            return System.IO.Path.Combine(path, "conf");
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                return path;
+            }
         }
 
         public static string GenerateKey(int keyLen)
@@ -26,7 +27,7 @@
             string chars = "0123456789abcdefghjiklmnopqrstuvwxyzABCDEFGHJIKLMNOPQRSTUVWXYZ";
             string key = "";
 
-            System.Random rnd = new();
+            Random rnd = new();
             int maxNum = chars.Length;
 
             for (int i = 0; i < keyLen; i++)
