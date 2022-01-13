@@ -9,11 +9,24 @@ namespace PNS4OneS
 {
     public static class SendMessageHandler
     {
+        public enum CheckAccessTokenResult
+        {
+            Success,
+            InvalidToken,
+            TokenExpired
+        }
+
         public static async Task SendMessage(HttpRequest request, HttpResponse response)
         {
-            if (!CheckAuth(request, out string clientAppId))
+            var checkResult = CheckAccessToken(request, out string clientAppId);
+            if (checkResult == CheckAccessTokenResult.InvalidToken)
             {
                 response.StatusCode = 401;
+                return;
+            }
+            else if (checkResult == CheckAccessTokenResult.TokenExpired)
+            {
+                response.StatusCode = 403;
                 return;
             }
 
@@ -93,24 +106,26 @@ namespace PNS4OneS
             };
         }
 
-        private static bool CheckAuth(HttpRequest request, out string clientAppId)
+        private static CheckAccessTokenResult CheckAccessToken(HttpRequest request, out string clientAppId)
         {
             clientAppId = "";
 
             string accessTokenAuth = request.Headers["Authorization"];
             if (string.IsNullOrEmpty(accessTokenAuth) || !accessTokenAuth.StartsWith("Bearer "))
-                return false;
+                return CheckAccessTokenResult.InvalidToken;
 
             string accessTokenStr = accessTokenAuth.Replace("Bearer ", "");
 
             var apps = Program.ClientAppsStorage.GetApps();
             ClientApplication app = apps.FirstOrDefault(x => x.AccessToken?.Token == accessTokenStr);
 
-            if (app == null || DateTime.UtcNow > app.AccessToken.ExpiresIn)
-                return false;
+            if (app == null)
+                return CheckAccessTokenResult.InvalidToken;
+            else if (DateTime.UtcNow > app.AccessToken.ExpiresIn)
+                return CheckAccessTokenResult.TokenExpired;
 
             clientAppId = app.Id;
-            return true;
+            return CheckAccessTokenResult.Success;
         }
     }
 }
