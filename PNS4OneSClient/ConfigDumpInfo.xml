@@ -6,17 +6,17 @@
 			<Metadata name="Catalog.УчетныеЗаписиЭлектроннойПочты.Attribute.ВладелецУчетнойЗаписи" id="0a089163-9adc-4702-a6cc-c2dc004b111a"/>
 		</Metadata>
 		<Metadata name="CommonModule.pns4ones_СервисУведомлений" id="46b6adad-91d3-4132-b6e3-0310ab2449ae" configVersion="2be6d55d107b5df639fbb1ca3908367f2b32cc94"/>
-		<Metadata name="CommonModule.pns4ones_СервисУведомлений.Module" id="46b6adad-91d3-4132-b6e3-0310ab2449ae.0" configVersion="592290b69a3910378e5f944865a723a22a06cc6d"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомлений.Module" id="46b6adad-91d3-4132-b6e3-0310ab2449ae.0" configVersion="8bc8255b213ced1684969cbebc5e8504cd84a54d"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийВызовСервера" id="b198f640-2b7c-441a-864a-028ba36e7adb" configVersion="ceb4d01a686988173e8e61898f6a2c43c0219354"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийВызовСервера.Module" id="b198f640-2b7c-441a-864a-028ba36e7adb.0" configVersion="365fe75d2fd1086b151da0bcacedf38a87d95d72"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиент" id="13118581-78b8-4f6b-a848-e5d4808bc0eb" configVersion="b12f28d8db4e3453e8cd06fdc936f68150d15a21"/>
-		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиент.Module" id="13118581-78b8-4f6b-a848-e5d4808bc0eb.0" configVersion="8bb0366270d1fb857cf50e3336a38929a4ce03b4"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиент.Module" id="13118581-78b8-4f6b-a848-e5d4808bc0eb.0" configVersion="074b8b0bc63aebe0d1702fa9e5b754f3b0884c45"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентПовтИсп" id="51d6078e-3353-4435-897c-d6df0b92ba81" configVersion="fb33ed29623de0fe62bd6f56e5b41d0bff416e01"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентПовтИсп.Module" id="51d6078e-3353-4435-897c-d6df0b92ba81.0" configVersion="cbdd265e4a9a6aa52001fd59282d811703296231"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентСервер" id="3c27e81b-bcfa-48b8-95df-ff9c9a2ae854" configVersion="89c9e408716776903f8823e5b5ac81a273d6ae75"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийКлиентСервер.Module" id="3c27e81b-bcfa-48b8-95df-ff9c9a2ae854.0" configVersion="254410bb0fac171ecface72c78f75ee4e01956bc"/>
 		<Metadata name="CommonModule.pns4ones_СервисУведомленийПереопределяемый" id="59630c38-698b-43fe-b45d-acc95af50b7a" configVersion="c6c5789d5aa898ba24b28041a0e5879901b97e3c"/>
-		<Metadata name="CommonModule.pns4ones_СервисУведомленийПереопределяемый.Module" id="59630c38-698b-43fe-b45d-acc95af50b7a.0" configVersion="c63816f947ed68aa34247d97022589c6f05ff9b4"/>
+		<Metadata name="CommonModule.pns4ones_СервисУведомленийПереопределяемый.Module" id="59630c38-698b-43fe-b45d-acc95af50b7a.0" configVersion="0d6603b494c54a3506f265a5b088e6335373ffea"/>
 		<Metadata name="CommonModule.УправлениеЭлектроннойПочтой" id="426b5494-b904-42d2-89ab-38e18c9a0836" configVersion="606b13894973fac7cc83d46cd0bcab0a54d587bb"/>
 		<Metadata name="CommonModule.УправлениеЭлектроннойПочтой.Module" id="426b5494-b904-42d2-89ab-38e18c9a0836.0" configVersion="67e675b5e5c2058ae76e7b2c90bfe7b86b4e700b"/>
 		<Metadata name="CommonPicture.pns4ones_ДемоЗеленыйШар" id="f1e474f9-c296-4790-815b-fce6086deb2b" configVersion="7e41075c3b09027e346e4cbb07aafa4a178c6ecc"/>
