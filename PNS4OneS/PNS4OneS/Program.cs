@@ -144,16 +144,16 @@ namespace PNS4OneS
             Console.WriteLine("            PEM-файле на диске. Приватный ключ располагается в отдельном");
             Console.WriteLine("            PEM-файле.");
             Console.WriteLine("        FromFileWithPassword - используется SSL сертификат, хранящийся в");
-            Console.WriteLine("            PFX-файле на диске вместе с приватным ключем, защищенным паролем.");
+            Console.WriteLine("            PFX-файле на диске вместе с приватным ключем, защищенный паролем.");
             Console.WriteLine("    ssl_certificate              указывает имя сертификата в хранилище, если");
             Console.WriteLine("                                 параметр ssl_mode=FromStorage, или путь к");
             Console.WriteLine("                                 файлу, в котором хранится SSL сертификат.");
             Console.WriteLine("    ssl_certificate_key          указывает путь к файлу приватного ключа SSL");
-            Console.WriteLine("                                 сертификата. Обязетелен, если параметр");
+            Console.WriteLine("                                 сертификата. Обязателен, если параметр");
             Console.WriteLine("                                 ssl_mode=FromFileWithPrivateKey, в противном");
             Console.WriteLine("                                 случае игнорируется.");
             Console.WriteLine("    ssl_certificate_password     указывает пароль приватного ключа SSL");
-            Console.WriteLine("                                 сертификата. Обязетелен, если параметр");
+            Console.WriteLine("                                 сертификата. Обязателен, если параметр");
             Console.WriteLine("                                 ssl_mode=FromFileWithPassword, в противном");
             Console.WriteLine("                                 случае игнорируется.");
         }
